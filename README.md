@@ -44,10 +44,38 @@ Blogger is a simple blogging web application for authors and readers. Authors ca
 ![alt text](three-tier-web-application-architecture.png)
 
 ## routes
+TODO
+### author.js
+TODO
+
+### reader.js
+TODO
+
+### user.js
+TODO
 
 ## views
+TODO
+### author-home.ejs
+TODO
+
+### author-article-edit.ejs
+TODO
+
+### author-settings.ejs
+TODO
+
+### reader-home.ejs
+TODO
+
+### reader-article.ejs
+TODO
+
+### create-user-record.ejs
+TODO
 
 ## db_schema.sql
+TODO
 
 ## Getting Started
 ### Dependencies
