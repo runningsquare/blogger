@@ -46,21 +46,36 @@ Daabase Networks and the Web course project (July 2023)
 
 ## Getting Started
 ### Dependencies
-1. NodeJS
-- Follow installation instructions at https://nodejs.org/en/
-2. sqlite3
-- Windows: https://www.sqlitetutorial.net/download-install-sqlite/
-- Mac users: it comes preinstalled
-- Linux users: use a package manager eg. apt install
+- NodeJS
+
+Follow installation instructions at https://nodejs.org/en/
+- sqlite3
+
+<b>Windows:</b> https://www.sqlitetutorial.net/download-install-sqlite/
+<br>
+<b>Mac users:</b> it comes preinstalled
+<br>
+<b>Linux users:</b> use a package manager eg. apt install
 
 ### Installation / Executing Program
 Run the following commands to get started:
 1. Clone repository from Github
-```git clone https://github.com/runningsquare/blogger.git```
+```
+git clone https://github.com/runningsquare/blogger.git
+```
 2. Install all the node packages required
-```npm install```
-3. Build the database
-```Get-Content db_schema.sql | sqlite3 database.db``` (Windows)
-```npm run build-db``` (macOS, Linux)
+```
+npm install
+```
+3. Build the database (for Windows)
+```
+Get-Content db_schema.sql | sqlite3 database.db
+```
+3. Build the database (for macOS, Linux)
+```
+npm run build-db
+```
 4. Run the program
-```npm run start```
+```
+npm run start
+```
