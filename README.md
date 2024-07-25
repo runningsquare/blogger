@@ -4,6 +4,7 @@ Daabase Networks and the Web course project (July 2023)
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project Structure](#project-structure)
+- [Three-tier Web Application Architecture](#three-tier-web-application-architecture)
 - [routes](#routes)
 - [views](#views)
 - [db_schema.sql](#db_schemasql)
@@ -37,6 +38,9 @@ Daabase Networks and the Web course project (July 2023)
 ├── package-lock.json
 ├── package.json
 ```
+
+## Three-tier Web Application Architecture
+![alt text](three-tier-web-application-architecture.png)
 
 ## routes
 
