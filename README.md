@@ -11,6 +11,7 @@ Daabase Networks and the Web course project (July 2023)
 - [Getting Started](#getting-started)
 
 ## Introduction
+Blogger is a simple blogging web application for authors and readers. Authors can create, edit and publish articles. For readers, they can browse, read, comment on and like the published articles.
 
 ## Project Structure
 ```
@@ -83,3 +84,4 @@ npm run build-db
 ```
 npm run start
 ```
+5. Open the program at ```http://localhost:3000/author/home```
