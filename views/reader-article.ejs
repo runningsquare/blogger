@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <!-- Viewport meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="../styles/reader-article.css" type="text/css">
+
+        <!-- Javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+        <title>Reader Article</title>
+    </head>
+
+    <body>
+        <div class="page-header container-fluid">
+            <p id="page-title"><b>Microblogger</b>: Reader Article</p>
+            <a id="page-back" href="/reader/home">back</a>
+            <h1><%= author.blog_title %></h1>
+            <h4><%= author.blog_subtitle %></h4>
+            <h7><%= author.name %></h7>
+        </div>
+
+        <div class="page-body container-fluid">
+            <!-- Display article -->
+            <h1 class="page-subheader"><%= article.title %></h1>
+            <form id="like-btn" action="/reader/article/likes?id=<%= article.id %>" method="POST">
+                <input class="btn btn-sm btn-outline-secondary" type="submit" value="LIKE   <%= article.likes %>">
+            </form>
+            <h4><%= article.subtitle %></h4>
+            <p><b>Published: </b><%= article.published %></p>
+            <p><%= article.content %></p>
+
+            <!-- Article comment input -->
+            <form id="comment-form" action="/reader/article/comment?id=<%= article.id %>" method="POST">
+                <h6><b>Comment text:</b></h6>
+                <textarea name="comment" cols="50"></textarea><br>
+                <input class="btn btn-sm btn-outline-secondary" type="submit" value="ADD COMMENT">
+            </form>
+
+            <!-- Display comments -->
+            <% comments.forEach((comment) => { %>
+                <div class="comments-div">
+                    <p><%= comment.comment %></p>
+                    <p><b>posted: </b><%= comment.created %></p>
+                </div>
+            <% }) %>
+        </div>
+    </body>
+
+</html>

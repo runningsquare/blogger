@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <!-- Viewport meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="../styles/author-home.css" type="text/css">
+
+        <!-- Javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+        <title>Author Homepage</title>
+    </head>
+
+    <body>
+        <div class="page-header container-fluid">
+            <p id="page-title"><b>Microblogger</b>: Author Homepage</p>
+            <a id="page-settings" href="/author/settings">settings</a>
+            <h1><%= author.blog_title %></h1>
+            <h4><%= author.blog_subtitle %></h4>
+            <h7><%= author.name %></h7>
+        </div>
+
+        <div class="page-body container-fluid">
+            <div class="draft-articles">
+                <h2 class="page-subheader">Draft Articles</h2>
+
+                <!-- Show all draft articles -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Subtitle</th>
+                            <th>Created</th>
+                            <th>Last modified</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% articles.forEach((article) => {%>
+                            <% if (!article.published) { %><tr>
+                                <td><%= article.title %></td>
+                                <td><%= article.subtitle %></td>
+                                <td><%= article.created %></td>
+                                <td><%= article.last_modified %></td>
+                                <td>
+                                    <form class="actions-btn" action="/author/article/edit?id=<%= article.id %>" method="POST">
+                                        <input class="btn btn-sm btn-outline-secondary" type="submit" value="EDIT">
+                                    </form>
+                                    <form class="actions-btn" action="/author/article/publish?id=<%= article.id %>" method="POST">
+                                        <input class="btn btn-sm btn-outline-secondary" type="submit" onclick="return confirm('Are you sure?')" value="PUBLISH">
+                                    </form>
+                                    <form class="actions-btn" action="/author/article/delete?id=<%= article.id %>" method="POST">
+                                        <input class="btn btn-sm btn-outline-secondary" type="submit" onclick="return confirm('Are you sure?')" value="DELETE">
+                                    </form>
+                                </td>
+                            </tr><% } %>
+                        <% }) %>
+                    </tbody>
+                </table>
+
+                <!-- Form for creating new article -->
+                <form class="create-btn" action="/author/article/create" method="POST">
+                    <input class="btn btn-sm btn-outline-secondary" type="submit" value="CREATE NEW DRAFT">
+                </form>
+            </div>
+    
+            <div class="published-articles">
+                <h2 class="page-subheader">Published Articles</h2>
+                
+                <!-- Show all published articles -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Subtitle</th>
+                            <th>Created</th>
+                            <th>Published</th>
+                            <th>Likes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% articles.forEach((article) => {%>
+                            <% if (article.published) { %><tr>
+                                <td><%= article.title %></td>
+                                <td><%= article.subtitle %></td>
+                                <td><%= article.created %></td>
+                                <td><%= article.published %></td>
+                                <td><%= article.likes %></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-secondary actions-btn" type="button" onclick="return alert('http://localhost:3000/reader/article?id=<%= article.id %>')">SHARE</button>
+                                    <form class="actions-btn" action="/author/article/delete?id=<%= article.id %>" method="POST">
+                                        <input class="btn btn-sm btn-outline-secondary" type="submit" onclick="return confirm('Are you sure?')" value="DELETE">
+                                    </form>
+                                </td>
+                            </tr><% } %>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </body>
+
+</html>

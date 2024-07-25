@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <!-- Viewport meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="../styles/author-settings.css" type="text/css">
+
+        <!-- Javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+        <title>Author Settings</title>
+    </head>
+
+    <body>
+        <div class="page-header container-fluid">
+            <p id="page-title"><b>Microblogger</b>: Author Settings</p>
+            <a id="page-back" href="/author/home">back</a>
+            <h1><%= author.blog_title %></h1>
+            <h4><%= author.blog_subtitle %></h4>
+            <h7><%= author.name %></h7>
+        </div>
+
+        <div class="page-body container-fluid">
+            <div id="settings-div">
+                <form action="/author/update?id=<%= author.id %>" method="POST">
+                    <label class="settings-info" for="blog-title">Blog Title: </label>
+                    <input type="text" id="blogTitle" name="blogTitle" value="<%= author.blog_title %>" required>
+                    <br>
+                    <label class="settings-info" for="blog-subtitle">Blog Subtitle: </label>
+                    <input type="text" id="blogSubtitle" name="blogSubtitle" value="<%= author.blog_subtitle %>" required>
+                    <br>
+                    <label class="settings-info" for="author-name">Author name: </label>
+                    <input type="text" id="authorName" name="authorName" value="<%= author.name %>" required>
+                    <div class="create-btn">
+                        <input class="btn btn-sm btn-outline-secondary" type="submit" value="UPDATE">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>
