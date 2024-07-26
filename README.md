@@ -65,22 +65,22 @@ The web app receives a ```get``` request when a user enters the ```/author/home`
 A ```POST``` request is sent to this route when the author clicks on the "CREATE NEW DRAFT" button in the author home page. Then, the web app creates a new empty article in the database and redirects to the article edit page ```/author/article/edit/:id?```. The id is the newly created article id.
 
 ```/author/article/edit/:id?```
-This route retrieves data about the author and article to be edited from the database and then passes the data to ```author-article-edit.ejs``` for rendering the article edit page.
+ retrieves data about the author and article to be edited from the database and then passes the data to ```author-article-edit.ejs``` for rendering the article edit page.
 
 ```/author/article/update/:id?```
-This route updates the new article content submitted by the author into the database then redirects to its edit page.
+ updates the new article content submitted by the author into the database then redirects to its edit page.
 
 ```/author/article/publish/:id?```
-This route updates the article published field in the database then redirects to author home page.
+ updates the article published field in the database then redirects to author home page.
 
 ```/author/article/delete/:id?```
-This route deletes the article from database then redirects to author home page.
+ deletes the article from database then redirects to author home page.
 
 ```/author/settings```
-This route queries the database for author data then renders the page for author settings ```author-settings.ejs```.
+ queries the database for author data then renders the page for author settings ```author-settings.ejs```.
 
 ```/author/update/:id?```
-This route updates the database with the newly submitted author blog information from the author settings page and then redirects to the author home page.
+ updates the database with the newly submitted author blog information from the author settings page and then redirects to the author home page.
 
 ### reader.js
 TODO
