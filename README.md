@@ -44,34 +44,26 @@ Blogger is a simple blogging web application for authors and readers. Authors ca
 ![alt text](three-tier-web-application-architecture.png)
 
 ## routes
-TODO
+### index.js
+The index.js file sets up the configuration of the web application, such as creating and running the web application's database, seting the view engine and the routes of the web app. There are three main routes ```/author``` ```/reader``` ```/user``` which are defined in the javascript files below. The root route redirects the user to ```/reader/home```.
+
 ### author.js
-TODO
+author.js creates and defines 8 subroutes:
+- ```/author/home```
+- ```/author/article/create```
+- ```/author/article/edit/:id?```
+- ```/author/article/update/:id?```
+- ```/author/article/publish/:id?```
+- ```/author/article/delete/:id?```
+- ```/author/settings```
+- ```/author/update/:id?```
+
+When the web app receives a ```get``` request when a user enters the ```/author/home``` route, it queries the database for the author's information and articles and passes the data to ```author-home.ejs``` for rendering the page.
 
 ### reader.js
 TODO
 
 ### user.js
-TODO
-
-## views
-TODO
-### author-home.ejs
-TODO
-
-### author-article-edit.ejs
-TODO
-
-### author-settings.ejs
-TODO
-
-### reader-home.ejs
-TODO
-
-### reader-article.ejs
-TODO
-
-### create-user-record.ejs
 TODO
 
 ## db_schema.sql
