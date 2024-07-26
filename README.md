@@ -132,13 +132,13 @@ choose and return an item from an array.
 
 ## db_schema.sql
 Creates the follwing sqlite tables:
-- testUsers
-- testUserRecords
-- authors
-- articles
-- comments
+- ```testUsers```
+- ```testUserRecords```
+- ```authors```
+- ```articles```
+- ```comments```
 
-Default data were also inserted for testUsers, testUserRecords and authors for application testing during development.
+Default data were also inserted for ```testUsers```, ```testUserRecords``` and ```authors``` for application testing during development.
 
 ## Getting Started
 ### Dependencies
