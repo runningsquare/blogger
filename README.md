@@ -83,9 +83,51 @@ A ```POST``` request is sent to this route when the author clicks on the "CREATE
  updates the database with the newly submitted author blog information from the author settings page and then redirects to the author home page.
 
 ### reader.js
-TODO
+reader.js creates and defines 4 subroutes:
+- ```/home```
+- ```/article/:id?```
+- ```/article/likes/:id?```
+- ```/article/comment/:id?```
+
+```/reader/home```
+Queries user data and all articles from the database and then passes the data to render reader home page ```reader-home.ejs```.
+
+```/reader/article/:id?```
+Queries user data, comments and contents from the selected article from the database and then passes the data to render the article page ```reader-article.ejs```.
+
+```/reader/article/likes/:id?```
+When the user interacts with the article's like button on the article page, the web app queries the database for the article's current number of likes then updates the number. Then the reader is redirected back to the article page.
+
+```/reader/article/comment/:id?```
+When the user posts a new comment on the article page, the web app inserts it into the database then redirects the user back to the article page.
 
 ### user.js
+user.js creates and defines 3 subroutes:
+- ```/users/get-test-users```
+- ```/users/get-user-records```
+- ```/users/create-user-record``` (```get``` request)
+- ```/users/create-user-record``` (```POST``` request)
+
+It also defines the following helper functions for the routes:
+- ```generateRandomData(numWords=5)```
+- ```choose(array)```
+
+```/users/get-test-users```
+TODO
+
+```/users/get-user-records```
+TODO
+
+```/users/create-user-record``` (```get``` request)
+TODO
+
+```/users/create-user-record``` (```POST``` request)
+TODO
+
+```generateRandomData(numWords=5)```
+TODO
+
+```choose(array)```
 TODO
 
 ## db_schema.sql
