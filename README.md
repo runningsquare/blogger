@@ -58,7 +58,29 @@ author.js creates and defines 8 subroutes:
 - ```/author/settings```
 - ```/author/update/:id?```
 
+```/author/home```
 When the web app receives a ```get``` request when a user enters the ```/author/home``` route, it queries the database for the author's information and articles and passes the data to ```author-home.ejs``` for rendering the page.
+
+```/author/article/create```
+TODO
+
+```/author/article/edit/:id?```
+TODO
+
+```/author/article/update/:id?```
+TODO
+
+```/author/article/publish/:id?```
+TODO
+
+```/author/article/delete/:id?```
+TODO
+
+```/author/settings```
+TODO
+
+```/author/update/:id?```
+TODO
 
 ### reader.js
 TODO
