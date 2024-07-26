@@ -49,29 +49,37 @@ The index.js file sets up the configuration of the web application, such as crea
 
 ### author.js
 author.js creates and defines 8 subroutes:
+- ```/author/home```
+- ```/author/article/create```
+- ```/author/article/edit/:id?```
+- ```/author/article/update/:id?```
+- ```/author/article/publish/:id?```
+- ```/author/article/delete/:id?```
+- ```/author/settings```
+- ```/author/update/:id?```
 
-```/author/home```<br>
+```/author/home```
 The web app receives a ```get``` request when a user enters the ```/author/home``` route. It queries the database for the author's data and articles and passes the data to ```author-home.ejs``` for rendering the author's homme page.
 
-```/author/article/create```<br>
+```/author/article/create```
 A ```POST``` request is sent to this route when the author clicks on the "CREATE NEW DRAFT" button in the author home page. Then, the web app creates a new empty article in the database and redirects to the article edit page ```/author/article/edit/:id?```. The id is the newly created article id.
 
-```/author/article/edit/:id?```<br>
+```/author/article/edit/:id?```
 This route retrieves data about the author and article to be edited from the database and then passes the data to ```author-article-edit.ejs``` for rendering the article edit page.
 
-```/author/article/update/:id?```<br>
+```/author/article/update/:id?```
 This route updates the new article content submitted by the author into the database then redirects to its edit page.
 
-```/author/article/publish/:id?```<br>
+```/author/article/publish/:id?```
 This route updates the article published field in the database then redirects to author home page.
 
-```/author/article/delete/:id?```<br>
+```/author/article/delete/:id?```
 This route deletes the article from database then redirects to author home page.
 
-```/author/settings```<br>
+```/author/settings```
 This route queries the database for author data then renders the page for author settings ```author-settings.ejs```.
 
-```/author/update/:id?```<br>
+```/author/update/:id?```
 This route updates the database with the newly submitted author blog information from the author settings page and then redirects to the author home page.
 
 ### reader.js
