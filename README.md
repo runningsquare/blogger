@@ -113,10 +113,10 @@ It also defines the following helper functions for the routes:
 - ```choose(array)```
 
 ```/users/get-test-users```
-retrieves the current users from database.
+retrieves the current test users from database.
 
 ```/users/get-user-records```
-retrieves the current users records from database.
+retrieves the current test users records from database.
 
 ```/users/create-user-record``` (```get``` request)
 renders ```create-user-record.ejs``` for creating a new user record.
@@ -131,7 +131,14 @@ generates a random string for users test record value.
 choose and return an item from an array.
 
 ## db_schema.sql
-TODO
+Creates the follwing sqlite tables:
+- testUsers
+- testUserRecords
+- authors
+- articles
+- comments
+
+Default data were also inserted for testUsers, testUserRecords and authors for application testing during development.
 
 ## Getting Started
 ### Dependencies
