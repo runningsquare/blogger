@@ -113,22 +113,22 @@ It also defines the following helper functions for the routes:
 - ```choose(array)```
 
 ```/users/get-test-users```
-TODO
+retrieves the current users from database.
 
 ```/users/get-user-records```
-TODO
+retrieves the current users records from database.
 
 ```/users/create-user-record``` (```get``` request)
-TODO
+renders ```create-user-record.ejs``` for creating a new user record.
 
 ```/users/create-user-record``` (```POST``` request)
-TODO
+add a new user record to the database for user id = 1.
 
 ```generateRandomData(numWords=5)```
-TODO
+generates a random string for users test record value.
 
 ```choose(array)```
-TODO
+choose and return an item from an array.
 
 ## db_schema.sql
 TODO
