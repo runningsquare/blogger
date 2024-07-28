@@ -1,5 +1,5 @@
 # Blogger
-Daabase Networks and the Web course project (July 2023)
+Database Networks and the Web course project (July 2023)
 
 ## Table of Contents
 - [Introduction](#introduction)
